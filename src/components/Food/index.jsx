@@ -5,8 +5,8 @@ import { Container } from './styles';
 
 import api from '../../services/api';
 
-export function Food({ food, available, handleDelete, handleEditFood }) {
-  const [isAvailable, setIsAvailable] = useState(available)
+export function Food({ food, handleDelete, handleEditFood }) {
+  const [isAvailable, setIsAvailable] = useState(food.available)
 
   async function toggleAvailable () {
     await api.put(`/foods/${food.id}`, {
